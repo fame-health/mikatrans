@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+      xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+      xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Halaman Utama -->
+  <url>
+    <loc>https://mikatrans.com/</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+    <image:image>
+      <image:loc>https://mikatrans.com/image/gambar.png</image:loc>
+      <image:title>MIKA TRANS - Bus Pariwisata & Travel Pekanbaru</image:title>
+      <image:caption>Layanan sewa bus pariwisata dan travel executive terpercaya di Riau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikatrans.com/image/bus.png</image:loc>
+      <image:title>Armada Bus MIKA TRANS</image:title>
+      <image:caption>Bus pariwisata premium dengan kapasitas 31-50 seat</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Halaman Layanan Bus -->
+  <url>
+    <loc>https://mikatrans.com/bus</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://mikatrans.com/image/bus.png</image:loc>
+      <image:title>Sewa Bus Pariwisata MIKA TRANS</image:title>
+    </image:image>
+  </url>
+
+  <!-- Halaman Layanan Travel -->
+  <url>
+    <loc>https://mikatrans.com/travel</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Halaman Tentang Kami -->
+  <url>
+    <loc>https://mikatrans.com/#tentang</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Halaman Kontak -->
+  <url>
+    <loc>https://mikatrans.com/#kontak</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Halaman Jadwal & Pemesanan -->
+  <url>
+    <loc>https://mikatrans.com/#jadwal</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Halaman Booking -->
+  <url>
+    <loc>https://mikatrans.com/#booking</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Halaman Kelas Layanan -->
+  <url>
+    <loc>https://mikatrans.com/bus#kelas</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Halaman Paket Wisata -->
+  <url>
+    <loc>https://mikatrans.com/bus#paket-wisata</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+</urlset>

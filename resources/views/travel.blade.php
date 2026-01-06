@@ -1,71 +1,67 @@
-<!DOCTYPE html>
+
+
+    <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Layanan Travel - MIKA TRANS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mika Trans Pekanbaru | Sewa Bus Pariwisata & Travel Riau Terpercaya</title>
+    <!-- Metadata tetap sama -->
     <meta name="description" content="PT MIKATRANS PEKANBARU: Layanan Sewa Bus Pariwisata Premium (31-50 Seat) & Travel Executive Pekanbaru - Tembilahan. Armada modern, aman, dan tepat waktu.">
     <meta name="keywords" content="mika trans, bus pariwisata pekanbaru, travel pekanbaru tembilahan, sewa bus riau, sewa bus pariwisata riau, travel mika trans, tiket travel pekanbaru">
     <meta name="author" content="MIKA TRANS">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="http://mikatrans.com/">
 
+    <!-- Open Graph Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://mikatrans.com/">
     <meta property="og:title" content="Mika Trans Pekanbaru | Sewa Bus Pariwisata & Travel Riau">
     <meta property="og:description" content="Solusi perjalanan nyaman di Riau. Sewa Bus Pariwisata dan Travel Executive Pekanbaru-Tembilahan PP. Hubungi +62 822-8802-3332.">
     <meta property="og:image" content="{{ asset('image/travel.png') }}">
 
+    <!-- Twitter Cards -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="http://mikatrans.com/">
     <meta property="twitter:title" content="Mika Trans Pekanbaru | Sewa Bus Pariwisata & Travel Riau">
     <meta property="twitter:description" content="Layanan transportasi bus & travel terbaik di Pekanbaru dengan armada modern dan driver profesional.">
     <meta property="twitter:image" content="{{ asset('image/travel.png') }}">
 
+    <!-- Geo Tags -->
     <meta name="geo.region" content="ID-RI">
     <meta name="geo.placename" content="Pekanbaru">
     <meta name="geo.position" content="0.507068;101.447779">
     <meta name="ICBM" content="0.507068, 101.447779">
 
-@verbatim
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TransportationBusiness",
-  "@id": "https://mikatrans.com/#business",
-  "name": "PT MIKATRANS PEKANBARU",
-  "url": "https://mikatrans.com",
-  "logo": "https://mikatrans.com/image/gambar.png",
-  "image": "https://mikatrans.com/image/gambar.png",
-  "telephone": "+62-822-8802-3332",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Jalan H. Usman, Kubang Jaya",
-    "addressLocality": "Pekanbaru",
-    "addressRegion": "Riau",
-    "postalCode": "28293",
-    "addressCountry": "ID"
-  }
-}
-</script>
-@endverbatim
-
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Schema.org -->
+    @verbatim
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TransportationBusiness",
+      "@id": "https://mikatrans.com/#business",
+      "name": "PT MIKATRANS PEKANBARU",
+      "url": "https://mikatrans.com",
+      "logo": "https://mikatrans.com/image/gambar.png",
+      "image": "https://mikatrans.com/image/gambar.png",
+      "telephone": "+62-822-8802-3332",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jalan H. Usman, Kubang Jaya",
+        "addressLocality": "Pekanbaru",
+        "addressRegion": "Riau",
+        "postalCode": "28293",
+        "addressCountry": "ID"
+      }
+    }
+    </script>
+    @endverbatim
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-
 
     <script>
         tailwind.config = {
@@ -81,6 +77,9 @@
                     },
                     fontFamily: {
                         'poppins': ['Poppins', 'sans-serif']
+                    },
+                    screens: {
+                        'xs': '475px',
                     }
                 }
             }
@@ -89,6 +88,17 @@
     <style>
         * {
             font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+            width: 100%;
         }
 
         .gradient-accent {
@@ -126,6 +136,32 @@
 
         .shine-effect:hover::before {
             left: 100%;
+        }
+
+        /* Fix untuk mobile touch */
+        button, a {
+            touch-action: manipulation;
+        }
+
+        /* Animasi bounce untuk mobile */
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 3s infinite ease-in-out;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fbbf24;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -192,6 +228,7 @@
     </nav>
 
     <!-- Hero Section -->
+<!-- Hero Section -->
     <section class="pt-32 pb-16 gradient-dark text-white relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-10 left-10 w-48 h-48 bg-accent rounded-full blur-3xl"></div>
@@ -213,24 +250,33 @@
         </div>
     </section>
 
-    <!-- Filter Section -->
-    <section class="py-8 bg-white shadow-md -mt-8 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-4">
-                <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Lokasi Jemput</label>
-                    <input type="text" placeholder="Alamat jemput" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent">
+    <!-- Filter Section - Mobile Friendly -->
+    <section class="py-6 bg-white shadow-md -mt-8 relative z-10 mx-4 rounded-2xl">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-3 xs:gap-4">
+                <div class="col-span-1 xs:col-span-2">
+                    <label class="block text-xs xs:text-sm font-semibold text-gray-700 mb-1">Lokasi Jemput</label>
+                    <div class="relative">
+                        <i class="fas fa-map-marker-alt absolute left-3 top-3.5 text-gray-400 text-sm"></i>
+                        <input type="text" placeholder="Alamat jemput" class="w-full pl-10 pr-3 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent">
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Lokasi Tujuan</label>
-                    <input type="text" placeholder="Alamat tujuan" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent">
+                <div class="col-span-1 xs:col-span-2">
+                    <label class="block text-xs xs:text-sm font-semibold text-gray-700 mb-1">Lokasi Tujuan</label>
+                    <div class="relative">
+                        <i class="fas fa-flag absolute left-3 top-3.5 text-gray-400 text-sm"></i>
+                        <input type="text" placeholder="Alamat tujuan" class="w-full pl-10 pr-3 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent">
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Tanggal & Waktu</label>
-                    <input type="datetime-local" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent">
+                <div class="col-span-1 xs:col-span-2">
+                    <label class="block text-xs xs:text-sm font-semibold text-gray-700 mb-1">Tanggal & Waktu</label>
+                    <div class="relative">
+                        <i class="fas fa-calendar-alt absolute left-3 top-3.5 text-gray-400 text-sm"></i>
+                        <input type="datetime-local" class="w-full pl-10 pr-3 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent">
+                    </div>
                 </div>
-                <div class="flex items-end">
-                    <button class="w-full gradient-accent text-primary-dark font-bold py-3 rounded-lg hover:shadow-xl transition-all duration-300">
+                <div class="col-span-1 xs:col-span-2 flex items-end">
+                    <button class="w-full gradient-accent text-primary-dark font-bold py-2.5 text-sm xs:text-base rounded-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center">
                         <i class="fas fa-search mr-2"></i>
                         Cari Travel
                     </button>
@@ -239,161 +285,156 @@
         </div>
     </section>
 
-    <!-- Tipe Travel Section -->
-<section id="jadwal" class="py-20 bg-gray-50/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="text-center mb-16">
-            <span class="bg-accent/10 text-accent-dark px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border border-accent/20">
-                Time Schedule
-            </span>
-            <h2 class="text-4xl font-extrabold text-primary mt-4">
-                Travel <span class="gradient-accent bg-clip-text text-transparent">Executive</span>
-            </h2>
-            <div class="w-24 h-1.5 gradient-accent mx-auto mt-4 rounded-full"></div>
-            <p class="text-gray-600 mt-4 max-w-xl mx-auto">
-                Nikmati fleksibilitas perjalanan dengan layanan door-to-door yang tepat waktu dan armada terbaru kami.
-            </p>
-        </div>
-
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-
-            <div class="lg:col-span-5 relative group">
-                <div class="absolute -inset-4 gradient-accent opacity-20 blur-2xl rounded-full group-hover:opacity-30 transition duration-500"></div>
-                <div class="relative z-10 overflow-hidden rounded-3xl shadow-2xl border-8 border-white">
-                    <img src="{{ asset('image/travel.png') }}"
-                         alt="Travel Executive"
-                         class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex items-end p-8">
-                        <div>
-                            <p class="text-accent font-bold">Armada Premium</p>
-                            <p class="text-white text-sm opacity-90">Toyota Hiace & Innova Zenix</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="absolute -bottom-6 -right-6 z-20 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 hidden md:block animate-bounce-slow">
-                    <div class="flex items-center space-x-3">
-                        <div class="bg-green-100 p-2 rounded-lg text-green-600">
-                            <i class="fas fa-check-circle text-xl"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs text-gray-500 font-medium">Status Layanan</p>
-                            <p class="text-sm font-bold text-primary">Tersedia Setiap Hari</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:col-span-7">
-                <div class="mb-8">
-                    <h3 class="text-3xl font-bold text-primary flex items-center">
-                        <i class="fas fa-route text-accent mr-4"></i>
-                        Pekanbaru <i class="fas fa-long-arrow-alt-right mx-3 text-gray-300"></i> Tembilahan
-                    </h3>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-4 mb-8">
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-colors">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-blue-50 text-blue-600 p-2 rounded-lg">
-                                <i class="fas fa-sun text-xl"></i>
-                            </span>
-                            <span class="text-xs font-bold text-gray-400 uppercase tracking-tighter">Keberangkatan</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-primary">Sesi Pagi</h4>
-                        <p class="text-3xl font-black text-primary mt-1">10.00 <span class="text-sm font-medium text-gray-500">WIB</span></p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-colors">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-indigo-50 text-indigo-600 p-2 rounded-lg">
-                                <i class="fas fa-moon text-xl"></i>
-                            </span>
-                            <span class="text-xs font-bold text-gray-400 uppercase tracking-tighter">Keberangkatan</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-primary">Sesi Malam</h4>
-                        <p class="text-3xl font-black text-primary mt-1">21.00 <span class="text-sm font-medium text-gray-500">WIB</span></p>
-                    </div>
-                </div>
-
-                <div class="space-y-4 mb-8">
-                    <div class="flex items-center p-4 bg-white rounded-xl border-l-4 border-accent shadow-sm">
-                        <i class="fas fa-id-badge text-accent w-8 text-center text-lg"></i>
-                        <span class="ml-3 font-medium text-gray-700">Carter harian & Drop-off Bandara tersedia</span>
-                    </div>
-                    <div class="flex items-center p-4 bg-white rounded-xl border-l-4 border-accent shadow-sm">
-                        <i class="fas fa-box-open text-accent w-8 text-center text-lg"></i>
-                        <span class="ml-3 font-medium text-gray-700">Layanan titip paket kilat (Max 30 kg)</span>
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://wa.me/6281399441555"
-                       class="flex-1 shine-effect inline-flex items-center justify-center gradient-dark text-white font-bold py-4 rounded-2xl hover:shadow-2xl transition-all duration-300">
-                        <i class="fab fa-whatsapp text-xl mr-3"></i>
-                        Pesan Kursi Sekarang
-                    </a>
-                    <div class="flex flex-col justify-center px-4 py-2 bg-gray-100 rounded-2xl text-center sm:text-left">
-                        <span class="text-[10px] uppercase font-bold text-gray-400 tracking-widest">Hotline 24/7</span>
-                        <span class="text-primary font-bold">0813-9944-1555</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<style>
-    @keyframes bounce-slow {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
-    .animate-bounce-slow {
-        animation: bounce-slow 3s infinite ease-in-out;
-    }
-</style>
-
-
-    <!-- Rute Populer Section -->
-    <section class="py-16 bg-white">
+    <!-- Jadwal Travel - Mobile Optimized -->
+    <section id="jadwal" class="py-12 xs:py-16 bg-gray-50/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Rute Tersedia</span>
-                <h2 class="text-3xl font-bold text-primary mb-3 mt-2">
+            <div class="text-center mb-10 xs:mb-16">
+                <span class="bg-accent/10 text-accent-dark px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest border border-accent/20">
+                    Time Schedule
+                </span>
+                <h2 class="text-2xl xs:text-3xl lg:text-4xl font-extrabold text-primary mt-4">
+                    Travel <span class="gradient-accent bg-clip-text text-transparent">Executive</span>
+                </h2>
+                <div class="w-20 h-1.5 gradient-accent mx-auto mt-3 rounded-full"></div>
+                <p class="text-sm xs:text-base text-gray-600 mt-3 max-w-xl mx-auto px-4">
+                    Nikmati fleksibilitas perjalanan dengan layanan door-to-door yang tepat waktu dan armada terbaru kami.
+                </p>
+            </div>
+
+            <div class="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <!-- Gambar -->
+                <div class="lg:col-span-5 relative group w-full">
+                    <div class="absolute -inset-2 xs:-inset-4 gradient-accent opacity-20 blur-2xl rounded-full group-hover:opacity-30 transition duration-500"></div>
+                    <div class="relative z-10 overflow-hidden rounded-2xl lg:rounded-3xl shadow-xl border-4 lg:border-8 border-white">
+                        <img src="{{ asset('image/travel.png') }}"
+                             alt="Travel Executive"
+                             class="w-full h-48 xs:h-64 lg:h-auto object-cover transform group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex items-end p-4 lg:p-8">
+                            <div>
+                                <p class="text-accent font-bold text-sm lg:text-base">Armada Premium</p>
+                                <p class="text-white text-xs lg:text-sm opacity-90">Toyota Hiace & Innova Zenix</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sticker Info - Hide on very small screens -->
+                    <div class="absolute -bottom-4 -right-4 z-20 bg-white p-2 xs:p-4 rounded-xl shadow-xl border border-gray-100 hidden xs:block animate-bounce-slow">
+                        <div class="flex items-center space-x-2 xs:space-x-3">
+                            <div class="bg-green-100 p-1 xs:p-2 rounded-lg text-green-600">
+                                <i class="fas fa-check-circle text-sm xs:text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] xs:text-xs text-gray-500 font-medium">Status</p>
+                                <p class="text-xs xs:text-sm font-bold text-primary">Tersedia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Konten -->
+                <div class="lg:col-span-7 w-full">
+                    <div class="mb-6">
+                        <h3 class="text-xl xs:text-2xl lg:text-3xl font-bold text-primary flex items-center flex-wrap">
+                            <i class="fas fa-route text-accent mr-3 text-lg xs:text-xl"></i>
+                            <span class="whitespace-nowrap">Pekanbaru</span>
+                            <i class="fas fa-long-arrow-alt-right mx-2 xs:mx-3 text-gray-300 text-sm xs:text-base"></i>
+                            <span class="whitespace-nowrap">Tembilahan</span>
+                        </h3>
+                    </div>
+
+                    <!-- Grid Jadwal -->
+                    <div class="grid grid-cols-1 xs:grid-cols-2 gap-3 xs:gap-4 mb-6">
+                        <div class="bg-white p-4 xs:p-6 rounded-xl shadow-sm border border-gray-100 hover:border-accent transition-colors">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-blue-50 text-blue-600 p-1 xs:p-2 rounded-lg">
+                                    <i class="fas fa-sun text-lg xs:text-xl"></i>
+                                </span>
+                                <span class="text-[10px] xs:text-xs font-bold text-gray-400 uppercase">Pagi</span>
+                            </div>
+                            <h4 class="text-lg xs:text-xl font-bold text-primary">Sesi Pagi</h4>
+                            <p class="text-2xl xs:text-3xl font-black text-primary mt-1">10.00 <span class="text-xs xs:text-sm font-medium text-gray-500">WIB</span></p>
+                        </div>
+
+                        <div class="bg-white p-4 xs:p-6 rounded-xl shadow-sm border border-gray-100 hover:border-accent transition-colors">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-indigo-50 text-indigo-600 p-1 xs:p-2 rounded-lg">
+                                    <i class="fas fa-moon text-lg xs:text-xl"></i>
+                                </span>
+                                <span class="text-[10px] xs:text-xs font-bold text-gray-400 uppercase">Malam</span>
+                            </div>
+                            <h4 class="text-lg xs:text-xl font-bold text-primary">Sesi Malam</h4>
+                            <p class="text-2xl xs:text-3xl font-black text-primary mt-1">21.00 <span class="text-xs xs:text-sm font-medium text-gray-500">WIB</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Fitur -->
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center p-3 xs:p-4 bg-white rounded-xl border-l-4 border-accent shadow-sm">
+                            <i class="fas fa-id-badge text-accent w-6 text-center text-base xs:text-lg"></i>
+                            <span class="ml-3 text-sm xs:text-base font-medium text-gray-700">Carter & Drop-off Bandara</span>
+                        </div>
+                        <div class="flex items-center p-3 xs:p-4 bg-white rounded-xl border-l-4 border-accent shadow-sm">
+                            <i class="fas fa-box-open text-accent w-6 text-center text-base xs:text-lg"></i>
+                            <span class="ml-3 text-sm xs:text-base font-medium text-gray-700">Titip paket (Max 30 kg)</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col xs:flex-row gap-3">
+                        <a href="https://wa.me/6281399441555"
+                           class="flex-1 shine-effect inline-flex items-center justify-center gradient-dark text-white font-bold py-3 xs:py-4 text-sm xs:text-base rounded-xl hover:shadow-2xl transition-all duration-300">
+                            <i class="fab fa-whatsapp text-lg xs:text-xl mr-2 xs:mr-3"></i>
+                            Pesan Sekarang
+                        </a>
+                        <div class="flex flex-col justify-center px-4 py-2 xs:py-3 bg-gray-100 rounded-xl text-center">
+                            <span class="text-[9px] xs:text-[10px] uppercase font-bold text-gray-400 tracking-widest">Hotline 24/7</span>
+                            <span class="text-primary font-bold text-sm xs:text-base">0813-9944-1555</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rute Populer - Mobile Optimized -->
+    <section class="py-12 xs:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-accent font-semibold text-xs xs:text-sm uppercase tracking-wider">Rute Tersedia</span>
+                <h2 class="text-2xl xs:text-3xl font-bold text-primary mb-3 mt-2">
                     Rute <span class="gradient-accent bg-clip-text text-transparent">Travel Populer</span>
                 </h2>
             </div>
 
             <div class="space-y-4">
                 <!-- Rute Card 1 -->
-                <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover-lift">
-                    <div class="flex flex-wrap items-center justify-between gap-4">
-                        <div class="flex items-center space-x-6">
-                            <div class="bg-green-50 p-4 rounded-xl">
-                                <i class="fas fa-car text-green-600 text-3xl"></i>
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-4 xs:p-6 hover-lift">
+                    <div class="flex flex-col xs:flex-row xs:items-center justify-between gap-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-green-50 p-3 xs:p-4 rounded-xl">
+                                <i class="fas fa-car text-green-600 text-2xl xs:text-3xl"></i>
                             </div>
-                            <div>
-                                <div class="flex items-center space-x-3 mb-2">
-                                    <h3 class="text-xl font-bold text-primary">Tembilahan</h3>
-                                    <i class="fas fa-arrow-right text-accent"></i>
-                                    <h3 class="text-xl font-bold text-primary">Pekanbaru</h3>
+                            <div class="flex-1">
+                                <div class="flex flex-col xs:flex-row xs:items-center space-y-1 xs:space-y-0 xs:space-x-3 mb-2">
+                                    <h3 class="text-lg xs:text-xl font-bold text-primary">Tembilahan</h3>
+                                    <i class="fas fa-arrow-right text-accent hidden xs:block"></i>
+                                    <i class="fas fa-arrow-down text-accent xs:hidden text-sm"></i>
+                                    <h3 class="text-lg xs:text-xl font-bold text-primary">Pekanbaru</h3>
                                 </div>
-                                <div class="flex items-center space-x-4 text-sm text-gray-600">
+                                <div class="flex flex-wrap items-center gap-2 xs:gap-4 text-xs xs:text-sm text-gray-600">
                                     <span><i class="fas fa-clock text-accent mr-1"></i> 6-7 Jam</span>
                                     <span><i class="fas fa-road text-accent mr-1"></i> 350 km</span>
-                                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">SHARING</span>
+                                    <span class="bg-green-100 text-green-700 px-2 xs:px-3 py-1 rounded-full text-xs font-semibold">SHARING</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-6">
+                        <div class="flex items-center justify-between xs:justify-end space-x-4 xs:space-x-6">
                             <div class="text-right">
-                                <div class="text-sm text-gray-500">Mulai dari</div>
-                                <div class="text-3xl font-bold text-primary">200K</div>
+                                <div class="text-xs xs:text-sm text-gray-500">Mulai dari</div>
+                                <div class="text-2xl xs:text-3xl font-bold text-primary">200K</div>
                                 <div class="text-xs text-green-600 font-semibold"><i class="fas fa-users mr-1"></i> 10 Kursi</div>
                             </div>
-                            <button class="gradient-accent text-primary-dark font-bold px-6 py-3 rounded-lg hover:shadow-xl transition-all duration-300">
+                            <button class="gradient-accent text-primary-dark font-bold px-4 xs:px-6 py-2 xs:py-3 rounded-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap text-sm xs:text-base">
                                 <i class="fas fa-ticket-alt mr-2"></i>
                                 Pesan
                             </button>
@@ -402,185 +443,188 @@
                 </div>
 
                 <!-- Rute Card 2 -->
-                <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover-lift">
-                    <div class="flex flex-wrap items-center justify-between gap-4">
-                        <div class="flex items-center space-x-6">
-                            <div class="bg-accent/10 p-4 rounded-xl">
-                                <i class="fas fa-car text-accent text-3xl"></i>
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-4 xs:p-6 hover-lift">
+                    <div class="flex flex-col xs:flex-row xs:items-center justify-between gap-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-accent/10 p-3 xs:p-4 rounded-xl">
+                                <i class="fas fa-car text-accent text-2xl xs:text-3xl"></i>
                             </div>
-                            <div>
-                                <div class="flex items-center space-x-3 mb-2">
-                                    <h3 class="text-xl font-bold text-primary">Pekanbaru</h3>
-                                    <i class="fas fa-arrow-right text-accent"></i>
-                                    <h3 class="text-xl font-bold text-primary">Tembilahan</h3>
+                            <div class="flex-1">
+                                <div class="flex flex-col xs:flex-row xs:items-center space-y-1 xs:space-y-0 xs:space-x-3 mb-2">
+                                    <h3 class="text-lg xs:text-xl font-bold text-primary">Pekanbaru</h3>
+                                    <i class="fas fa-arrow-right text-accent hidden xs:block"></i>
+                                    <i class="fas fa-arrow-down text-accent xs:hidden text-sm"></i>
+                                    <h3 class="text-lg xs:text-xl font-bold text-primary">Tembilahan</h3>
                                 </div>
-                                <div class="flex items-center space-x-4 text-sm text-gray-600">
+                                <div class="flex flex-wrap items-center gap-2 xs:gap-4 text-xs xs:text-sm text-gray-600">
                                     <span><i class="fas fa-clock text-accent mr-1"></i> 4-5 Jam</span>
                                     <span><i class="fas fa-road text-accent mr-1"></i> 230 km</span>
-                                    <span class="bg-accent/20 text-accent-dark px-3 py-1 rounded-full text-xs font-semibold">UMUM</span>
+                                    <span class="bg-accent/20 text-accent-dark px-2 xs:px-3 py-1 rounded-full text-xs font-semibold">UMUM</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-6">
+                        <div class="flex items-center justify-between xs:justify-end space-x-4 xs:space-x-6">
                             <div class="text-right">
-                                <div class="text-sm text-gray-500">Mulai dari</div>
-                                <div class="text-3xl font-bold text-primary">200K</div>
+                                <div class="text-xs xs:text-sm text-gray-500">Mulai dari</div>
+                                <div class="text-2xl xs:text-3xl font-bold text-primary">200K</div>
                                 <div class="text-xs text-orange-600 font-semibold"><i class="fas fa-car mr-1"></i> 10 Kursi</div>
                             </div>
-                            <button class="gradient-accent text-primary-dark font-bold px-6 py-3 rounded-lg hover:shadow-xl transition-all duration-300">
+                            <button class="gradient-accent text-primary-dark font-bold px-4 xs:px-6 py-2 xs:py-3 rounded-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap text-sm xs:text-base">
                                 <i class="fas fa-ticket-alt mr-2"></i>
                                 Pesan
                             </button>
                         </div>
                     </div>
                 </div>
+            </div>
 
-
-            <div class="text-center mt-10">
-                <button class="bg-white hover:bg-primary text-primary hover:text-white font-bold px-8 py-3 rounded-xl shadow-lg border-2 border-primary transition-all duration-300 hover:scale-105">
+            <div class="text-center mt-8 xs:mt-10">
+                <button class="bg-white hover:bg-primary text-primary hover:text-white font-bold px-6 xs:px-8 py-2.5 xs:py-3 rounded-xl shadow-lg border-2 border-primary transition-all duration-300 hover:scale-105 text-sm xs:text-base">
                     Lihat Semua Rute <i class="fas fa-arrow-right ml-2"></i>
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Keunggulan Travel Section -->
-    <section class="py-16 bg-gray-50">
+    <!-- Keunggulan - Mobile Optimized -->
+    <section class="py-12 xs:py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Mengapa Memilih Kami</span>
-                <h2 class="text-3xl font-bold text-primary mb-3 mt-2">
+            <div class="text-center mb-10">
+                <span class="text-accent font-semibold text-xs xs:text-sm uppercase tracking-wider">Mengapa Memilih Kami</span>
+                <h2 class="text-2xl xs:text-3xl font-bold text-primary mb-3 mt-2">
                     Keunggulan <span class="gradient-accent bg-clip-text text-transparent">Travel Kami</span>
                 </h2>
             </div>
 
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift text-center">
-                    <div class="gradient-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-clock text-3xl text-primary-dark"></i>
+            <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-6">
+                <div class="bg-white p-4 xs:p-6 rounded-xl shadow-lg hover-lift text-center">
+                    <div class="gradient-accent w-12 h-12 xs:w-16 xs:h-16 rounded-full flex items-center justify-center mx-auto mb-3 xs:mb-4">
+                        <i class="fas fa-clock text-xl xs:text-3xl text-primary-dark"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-primary mb-2">Tepat Waktu</h4>
-                    <p class="text-sm text-gray-600">Selalu on-time sesuai jadwal yang disepakati</p>
+                    <h4 class="text-base xs:text-lg font-bold text-primary mb-1 xs:mb-2">Tepat Waktu</h4>
+                    <p class="text-xs xs:text-sm text-gray-600">Selalu on-time sesuai jadwal</p>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift text-center">
-                    <div class="gradient-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-shield-alt text-3xl text-primary-dark"></i>
+                <div class="bg-white p-4 xs:p-6 rounded-xl shadow-lg hover-lift text-center">
+                    <div class="gradient-accent w-12 h-12 xs:w-16 xs:h-16 rounded-full flex items-center justify-center mx-auto mb-3 xs:mb-4">
+                        <i class="fas fa-shield-alt text-xl xs:text-3xl text-primary-dark"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-primary mb-2">Aman Terpercaya</h4>
-                    <p class="text-sm text-gray-600">Driver profesional dengan izin resmi</p>
+                    <h4 class="text-base xs:text-lg font-bold text-primary mb-1 xs:mb-2">Aman Terpercaya</h4>
+                    <p class="text-xs xs:text-sm text-gray-600">Driver profesional berizin</p>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift text-center">
-                    <div class="gradient-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-home text-3xl text-primary-dark"></i>
+                <div class="bg-white p-4 xs:p-6 rounded-xl shadow-lg hover-lift text-center">
+                    <div class="gradient-accent w-12 h-12 xs:w-16 xs:h-16 rounded-full flex items-center justify-center mx-auto mb-3 xs:mb-4">
+                        <i class="fas fa-home text-xl xs:text-3xl text-primary-dark"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-primary mb-2">Door to Door</h4>
-                    <p class="text-sm text-gray-600">Jemput dan antar sampai lokasi tujuan</p>
+                    <h4 class="text-base xs:text-lg font-bold text-primary mb-1 xs:mb-2">Door to Door</h4>
+                    <p class="text-xs xs:text-sm text-gray-600">Jemput sampai lokasi tujuan</p>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift text-center">
-                    <div class="gradient-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-headset text-3xl text-primary-dark"></i>
+                <div class="bg-white p-4 xs:p-6 rounded-xl shadow-lg hover-lift text-center">
+                    <div class="gradient-accent w-12 h-12 xs:w-16 xs:h-16 rounded-full flex items-center justify-center mx-auto mb-3 xs:mb-4">
+                        <i class="fas fa-headset text-xl xs:text-3xl text-primary-dark"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-primary mb-2">24/7 Support</h4>
-                    <p class="text-sm text-gray-600">Customer service siap membantu kapan saja</p>
+                    <h4 class="text-base xs:text-lg font-bold text-primary mb-1 xs:mb-2">24/7 Support</h4>
+                    <p class="text-xs xs:text-sm text-gray-600">Customer service siap membantu</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="kontak" class="gradient-dark text-white pt-16 pb-8 relative overflow-hidden">
+    <!-- Footer - Mobile Optimized -->
+    <footer id="kontak" class="gradient-dark text-white pt-12 xs:pt-16 pb-8 relative overflow-hidden">
         <div class="absolute inset-0 opacity-5">
             <div class="absolute top-0 left-20 w-64 h-64 bg-accent rounded-full blur-3xl"></div>
             <div class="absolute bottom-0 right-20 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid md:grid-cols-4 gap-12">
+            <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
                 <!-- Brand & Deskripsi -->
-                <div>
-                    <div class="flex items-center space-x-2 mb-6">
-                        <div class="gradient-accent text-white rounded-lg p-0 shadow-lg group-hover:scale-10 transition-transform duration-300">
-                            <img src="{{ asset('image/gambar.png') }}" alt="Logo MIKA TRANS" class="w-16 h-16 object-contain">
+                <div class="xs:col-span-2 lg:col-span-1">
+                    <div class="flex items-center space-x-2 xs:space-x-4 mb-6">
+                        <div class="gradient-accent text-white rounded-lg p-0 shadow-lg w-12 h-12 xs:w-16 xs:h-16">
+                            <img src="{{ asset('image/gambar.png') }}" alt="Logo MIKA TRANS" class="w-full h-full object-contain p-1">
                         </div>
                         <div>
-                            <span class="text-2xl font-bold">MIKA</span><span class="text-2xl font-bold text-accent">TRANS</span>
+                            <div class="flex items-baseline">
+                                <span class="text-xl xs:text-2xl font-bold">MIKA</span>
+                                <span class="text-xl xs:text-2xl font-bold text-accent">TRANS</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">Premium Bus & Travel</p>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-sm mb-6">
+                    <p class="text-gray-400 text-xs xs:text-sm mb-6">
                         Perjalanan nyaman, aman, dan terpercaya ke seluruh Indonesia dengan armada modern dan layanan premium.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-accent transition"><i class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="https://www.instagram.com/mikatrans_travel/" class="text-gray-400 hover:text-accent transition"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-accent transition"><i class="fab fa-twitter text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-accent transition"><i class="fab fa-whatsapp text-xl"></i></a>
+                    <div class="flex items-center gap-3 xs:gap-4">
+                        <a href="https://www.facebook.com/profile.php?id=100094387691878" target="_blank" class="text-gray-400 hover:text-accent transition">
+                            <i class="fab fa-facebook-f text-lg xs:text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mikatrans_travel/" target="_blank" class="text-gray-400 hover:text-accent transition">
+                            <i class="fab fa-instagram text-lg xs:text-xl"></i>
+                        </a>
+                        <a href="https://maps.app.goo.gl/BZriUxe5ao7tvNYy5" target="_blank" class="text-gray-400 hover:text-accent transition">
+                            <i class="fas fa-map-marker-alt text-lg xs:text-xl"></i>
+                        </a>
+                        <a href="https://wa.me/6281399441555" target="_blank" class="text-gray-400 hover:text-accent transition">
+                            <i class="fab fa-whatsapp text-lg xs:text-xl"></i>
+                        </a>
                     </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
-                    <ul class="space-y-3 text-gray-400 text-sm">
-<div class="flex items-center gap-4">
-    <a href="https://www.facebook.com/profile.php?id=100094387691878" target="_blank" class="text-gray-400 hover:text-accent transition">
-        <i class="fab fa-facebook-f text-xl"></i>
-    </a>
-
-    <a href="https://www.instagram.com/mikatrans_travel/" target="_blank" class="text-gray-400 hover:text-accent transition">
-        <i class="fab fa-instagram text-xl"></i>
-    </a>
-
-    <a href="https://maps.app.goo.gl/BZriUxe5ao7tvNYy5" target="_blank" class="text-gray-400 hover:text-accent transition">
-        <i class="fas fa-map-marker-alt text-xl"></i>
-    </a>
-
-    <a href="https://wa.me/6281399441555" target="_blank" class="text-gray-400 hover:text-accent transition flex items-center gap-2">
-        <i class="fab fa-whatsapp text-xl"></i>
-        <span class="text-sm font-medium"></span>
-    </a>
-</div>
-                    </ul>
                 </div>
 
                 <!-- Layanan -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6">Layanan Kami</h4>
-                    <ul class="space-y-3 text-gray-400 text-sm">
-                        <li>Travel Sharing</li>
-                        <li>Travel Private</li>
-                        <li>Travel Luxury</li>
-                        <li>Bus Antar Kota</li>
-                        <li>Paket Wisata</li>
+                    <h4 class="text-base xs:text-lg font-bold mb-4 xs:mb-6">Layanan Kami</h4>
+                    <ul class="space-y-2 xs:space-y-3 text-gray-400 text-xs xs:text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-accent text-[6px] mr-2"></i>
+                            Travel Sharing
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-accent text-[6px] mr-2"></i>
+                            Travel Private
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-accent text-[6px] mr-2"></i>
+                            Travel Luxury
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-accent text-[6px] mr-2"></i>
+                            Bus Antar Kota
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-accent text-[6px] mr-2"></i>
+                            Paket Wisata
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Kontak -->
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Hubungi Kami</h4>
-                    <ul class="space-y-4 text-gray-400 text-sm">
+                <div class="xs:col-span-2 lg:col-span-1">
+                    <h4 class="text-base xs:text-lg font-bold mb-4 xs:mb-6">Hubungi Kami</h4>
+                    <ul class="space-y-3 xs:space-y-4 text-gray-400 text-xs xs:text-sm">
                         <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-accent mt-1 mr-3"></i>
-                           Jl. SM Amin, Air Hitam, Kec. Tampan, Kota Pekanbaru, Riau
+                            <i class="fas fa-map-marker-alt text-accent mt-0.5 mr-3 text-sm"></i>
+                            <span>Jl. SM Amin, Air Hitam, Pekanbaru</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-phone-alt text-accent mr-3"></i>
+                            <i class="fas fa-phone-alt text-accent mr-3 text-sm"></i>
                             0813-9944-1555
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-envelope text-accent mr-3"></i>
+                            <i class="fas fa-envelope text-accent mr-3 text-sm"></i>
                             info@mikatrans.id
                         </li>
                         <li class="flex items-center">
-                            <i class="fab fa-whatsapp text-accent mr-3"></i>
+                            <i class="fab fa-whatsapp text-accent mr-3 text-sm"></i>
                             0813-9944-1555
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500 text-sm">
+            <div class="border-t border-gray-700 mt-8 xs:mt-12 pt-6 xs:pt-8 text-center text-gray-500 text-xs xs:text-sm">
                 © 2026 PT. MIKA TRANS. All rights reserved. | Dibuat dengan ❤️ untuk perjalanan Anda
             </div>
         </div>
@@ -596,7 +640,8 @@
         const mobileMenu = document.getElementById('mobile-menu');
 
         if (mobileBtn && mobileMenu) {
-            mobileBtn.addEventListener('click', () => {
+            mobileBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
                 mobileMenu.classList.toggle('hidden');
 
                 // Toggle icon hamburger ↔ times
@@ -611,7 +656,7 @@
             });
 
             // Auto close menu ketika link diklik (mobile)
-            const mobileLinks = mobileMenu.querySelectorAll('a');
+            const mobileLinks = mobileMenu.querySelectorAll('a, button');
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
@@ -636,9 +681,9 @@
                 const target = document.querySelector(targetId);
                 if (!target) return;
 
-                const navbarOffset = 90;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - navbarOffset;
+                const navbarHeight = document.querySelector('nav').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = targetPosition - navbarHeight - 10;
 
                 window.scrollTo({
                     top: offsetPosition,
@@ -663,6 +708,36 @@
                 icon.classList.add('fa-bars');
             }
         });
+
+        // ==================
+        // 4. Optimize input pada mobile
+        // ==================
+        const inputs = document.querySelectorAll('input[type="text"], input[type="datetime-local"]');
+        inputs.forEach(input => {
+            input.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+            });
+        });
+
+        // ==================
+        // 5. Fix viewport height untuk mobile
+        // ==================
+        function setVh() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        setVh();
+        window.addEventListener('resize', setVh);
+        window.addEventListener('orientationchange', setVh);
+    });
+
+    // ==================
+    // 6. Optimize untuk mobile performance
+    // ==================
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
     });
     </script>
 </body>
