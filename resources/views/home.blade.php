@@ -288,78 +288,109 @@
     </section>
 
     <!-- Jadwal Bus Section -->
-<section id="layanan" class="py-10 bg-gray-50/50"> <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="layanan" class="py-16 bg-gray-50/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="mb-8">
-            <span class="text-accent font-bold text-[10px] uppercase tracking-[0.2em]">Pilihan Layanan</span>
-            <h2 class="text-xl font-extrabold text-primary mt-0.5 uppercase tracking-tight">
+        <div class="text-center mb-12">
+            <span class="text-accent font-semibold text-xs uppercase tracking-wider">Pilihan Layanan Terbaik</span>
+            <h2 class="text-3xl font-bold text-primary mb-4 mt-1">
                 Armada <span class="gradient-accent bg-clip-text text-transparent">Mika Trans</span>
             </h2>
-            <div class="w-10 h-0.5 gradient-accent mt-1.5 rounded-full"></div>
+            <div class="w-16 h-1 gradient-accent mx-auto mt-2 rounded-full"></div>
         </div>
 
-        <div class="space-y-10"> <div class="grid lg:grid-cols-2 gap-6 items-center">
-                <div class="relative order-2 lg:order-1">
-                    <div class="overflow-hidden rounded-lg shadow-md border-2 border-white">
-                        <img src="{{ asset('image/bus.png') }}" alt="Bus" class="w-full h-40 md:h-48 object-cover">
+        <div class="space-y-16">
+
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-5 relative group order-2 lg:order-1">
+                    <div class="absolute -inset-4 gradient-accent opacity-10 blur-2xl rounded-full"></div>
+                    <div class="relative z-10 overflow-hidden rounded-2xl shadow-xl border-4 border-white">
+                        <img src="{{ asset('image/bus.png') }}" alt="Bus Pariwisata" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <p class="text-accent font-bold text-base">Bus Pariwisata</p>
+                                <p class="text-white text-xs opacity-90">Kenyamanan Berwisata Grup</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="order-1 lg:order-2 lg:pl-4">
-                    <h3 class="text-base font-bold text-primary mb-2 flex items-center">
-                        <i class="fas fa-bus text-accent mr-2 text-xs"></i>
-                        Sewa Bus Pariwisata
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <h3 class="text-2xl font-bold text-primary mb-4 flex items-center">
+                        <span class="w-10 h-10 gradient-accent rounded-lg flex items-center justify-center mr-3 text-white text-sm">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </span>
+                        Paket Wisata & Sewa Bus
                     </h3>
-                    <p class="text-gray-500 text-[11px] leading-relaxed mb-4 max-w-sm">
-                        Layanan transportasi bus untuk kebutuhan rombongan, study tour, dan gathering dengan fasilitas standar pariwisata.
+
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Layanan sewa bus pariwisata dengan fasilitas premium untuk perjalanan jarak jauh maupun dalam kota. Cocok untuk berbagai kebutuhan acara Anda.
                     </p>
 
-                    <div class="grid grid-cols-2 gap-2 mb-4">
-                        <div class="flex items-center text-[10px] text-gray-600 bg-white p-1.5 rounded border border-gray-100">
-                            <i class="fas fa-check text-accent mr-1.5 text-[8px]"></i> Family Gathering
+                    <div class="grid grid-cols-2 gap-3 mb-8">
+                        <div class="bg-white p-3.5 rounded-xl border border-gray-100 flex items-center space-x-3 hover:border-accent transition-all shadow-sm">
+                            <div class="text-orange-600 text-xs"><i class="fas fa-users"></i></div>
+                            <span class="font-bold text-gray-700 text-[13px]">Family Gathering</span>
                         </div>
-                        <div class="flex items-center text-[10px] text-gray-600 bg-white p-1.5 rounded border border-gray-100">
-                            <i class="fas fa-check text-accent mr-1.5 text-[8px]"></i> Study Tour
+                        <div class="bg-white p-3.5 rounded-xl border border-gray-100 flex items-center space-x-3 hover:border-accent transition-all shadow-sm">
+                            <div class="text-blue-600 text-xs"><i class="fas fa-graduation-cap"></i></div>
+                            <span class="font-bold text-gray-700 text-[13px]">Study Tour</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-xl border border-gray-100 flex items-center space-x-3 hover:border-accent transition-all shadow-sm">
+                            <div class="text-green-600 text-xs"><i class="fas fa-mosque"></i></div>
+                            <span class="font-bold text-gray-700 text-[13px]">Ziarah</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-xl border border-gray-100 flex items-center space-x-3 hover:border-accent transition-all shadow-sm">
+                            <div class="text-purple-600 text-xs"><i class="fas fa-umbrella-beach"></i></div>
+                            <span class="font-bold text-gray-700 text-[13px]">Tour Wisata</span>
                         </div>
                     </div>
 
-                    <a href="https://wa.me/+6282288023332" class="inline-block bg-primary text-white text-[10px] font-bold py-2 px-4 rounded hover:bg-primary-dark transition-all">
-                        Hubungi Admin
+                    <a href="https://wa.me/+6282288023332" class="inline-flex items-center justify-center gradient-dark text-white font-bold py-3 px-8 rounded-xl text-sm transition-all hover:shadow-lg">
+                        <i class="fab fa-whatsapp text-lg mr-2"></i> Sewa Bus Sekarang
                     </a>
                 </div>
             </div>
 
-            <div class="border-t border-gray-200/60"></div> <div class="grid lg:grid-cols-2 gap-6 items-center">
-                <div class="lg:pr-4">
-                    <h3 class="text-base font-bold text-primary mb-0.5 flex items-center">
-                        <i class="fas fa-route text-accent mr-2 text-xs"></i>
+            <hr class="border-gray-100">
+
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-7">
+                    <h3 class="text-2xl font-bold text-primary mb-1 flex items-center">
+                        <span class="w-10 h-10 gradient-accent rounded-lg flex items-center justify-center mr-3 text-white text-sm">
+                            <i class="fas fa-route"></i>
+                        </span>
                         Travel Executive
                     </h3>
-                    <p class="text-gray-400 text-[10px] font-medium italic mb-3">Pekanbaru — Tembilahan (PP)</p>
+                    <p class="text-gray-500 mb-6 ml-14 text-[13px] font-medium italic">Pekanbaru — Tembilahan (PP)</p>
 
-                    <div class="flex gap-2 mb-4">
-                        <div class="bg-white px-3 py-2 rounded border border-gray-100 shadow-sm flex-1">
-                            <span class="text-[8px] font-bold text-gray-400 uppercase">Pagi</span>
-                            <p class="text-lg font-black text-primary leading-none">10.00 <span class="text-[9px] font-normal">WIB</span></p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white p-4 rounded-2xl border border-gray-100 relative group hover:border-accent transition-all shadow-sm">
+                            <h4 class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Sesi Pagi</h4>
+                            <p class="text-2xl font-black text-primary mt-1">10.00 <span class="text-xs font-medium text-gray-500">WIB</span></p>
+                            <i class="fas fa-sun absolute top-3 right-3 text-gray-100 text-xl"></i>
                         </div>
-                        <div class="bg-white px-3 py-2 rounded border border-gray-100 shadow-sm flex-1">
-                            <span class="text-[8px] font-bold text-gray-400 uppercase">Malam</span>
-                            <p class="text-lg font-black text-primary leading-none">21.00 <span class="text-[9px] font-normal">WIB</span></p>
+                        <div class="bg-white p-4 rounded-2xl border border-gray-100 relative group hover:border-accent transition-all shadow-sm">
+                            <h4 class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Sesi Malam</h4>
+                            <p class="text-2xl font-black text-primary mt-1">21.00 <span class="text-xs font-medium text-gray-500">WIB</span></p>
+                            <i class="fas fa-moon absolute top-3 right-3 text-gray-100 text-xl"></i>
                         </div>
                     </div>
 
-                    <p class="text-gray-500 text-[10px] mb-4">
-                        <i class="fas fa-info-circle mr-1 text-accent"></i> Melayani antar jemput alamat & paket kilat.
-                    </p>
+                    <div class="space-y-2 mb-8 ml-2">
+                        <div class="flex items-center text-gray-600 text-sm"><i class="fas fa-check-circle text-accent mr-3 text-xs"></i> Door-to-Door Service</div>
+                        <div class="flex items-center text-gray-600 text-sm"><i class="fas fa-check-circle text-accent mr-3 text-xs"></i> Titip Paket Kilat (1 Hari)</div>
+                    </div>
 
-                    <a href="https://wa.me/6281399441555" class="inline-block border border-primary text-primary text-[10px] font-bold py-2 px-4 rounded hover:bg-primary hover:text-white transition-all">
-                        Pesan Tiket
+                    <a href="https://wa.me/6281399441555" class="inline-flex items-center justify-center gradient-accent text-primary-dark font-bold py-3 px-8 rounded-xl text-sm transition-all hover:shadow-lg">
+                        <i class="fas fa-ticket-alt mr-2"></i> Pesan Tiket
                     </a>
                 </div>
 
-                <div class="relative">
-                    <div class="overflow-hidden rounded-lg shadow-md border-2 border-white">
-                        <img src="{{ asset('image/travel.png') }}" alt="Travel" class="w-full h-40 md:h-48 object-cover">
+                <div class="lg:col-span-5 relative group">
+                    <div class="absolute -inset-4 gradient-accent opacity-10 blur-2xl rounded-full"></div>
+                    <div class="relative z-10 overflow-hidden rounded-2xl shadow-xl border-4 border-white">
+                        <img src="{{ asset('image/travel.png') }}" alt="Travel Mika Trans" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
                     </div>
                 </div>
             </div>
