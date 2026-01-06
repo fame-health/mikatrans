@@ -135,12 +135,12 @@
             <div class="flex justify-between items-center py-3">
                 <div class="flex items-center space-x-4 group">
                     <div class="gradient-accent text-white rounded-lg p-0 shadow-lg group-hover:scale-10 transition-transform duration-300">
-                        <img src="{{ asset('image/gambar.png') }}" alt="Logo MIKA TRANS" class="w-16 h-16 object-contain">
+                        <img src="{{ asset('image/gambar.png') }}" alt="Logo MIKA TRANS" class="w-14 h-14 object-contain">
                     </div>
                     <div>
                         <span class="text-2xl font-bold text-primary">MIKA</span>
                         <span class="text-2xl font-bold text-accent">TRANS</span>
-                        <div class="text-sm text-gray-500 -mt-1">Premium Bus dan Travel di Pekanbaru</div>
+                        <div class="text-xs text-gray-500 -mt-1">Premium Bus dan Travel di Pekanbaru</div>
                     </div>
                 </div>
 
