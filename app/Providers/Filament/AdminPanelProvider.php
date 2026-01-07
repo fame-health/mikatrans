@@ -19,6 +19,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use App\Filament\Widgets\DashboardStats;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use App\Filament\Widgets\DashboardStatsBookingTravel;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -42,6 +43,7 @@ class AdminPanelProvider extends PanelProvider
                 AccountWidget::class,
                 FilamentInfoWidget::class,
                 DashboardStats::class,
+                DashboardStatsBookingTravel::class,
             ])
             ->middleware([
                 EncryptCookies::class,

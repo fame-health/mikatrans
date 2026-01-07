@@ -202,10 +202,11 @@
                         Kontak
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <button class="gradient-accent text-primary-dark text-sm font-bold px-5 py-2 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                        <i class="fas fa-ticket-alt mr-1.5"></i>
-                        Pesan Tiket
-                    </button>
+<button class="pesan-tiket-btn gradient-accent text-primary-dark text-sm font-bold px-5 py-2 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+    <i class="fas fa-ticket-alt mr-1.5"></i>
+    Pesan Tiket
+</button>
+
                 </div>
 
                 <button id="mobile-menu-btn" class="lg:hidden text-primary focus:outline-none">
@@ -219,10 +220,11 @@
                 <a href="/travel" class="block py-2 text-sm text-primary font-semibold bg-accent/10 px-3 rounded-lg">Travel</a>
                 <a href="/#tentang" class="block py-2 text-sm text-gray-700 hover:bg-accent/10 px-3 rounded-lg transition">Tentang</a>
                 <a href="/#kontak" class="block py-2 text-sm text-gray-700 hover:bg-accent/10 px-3 rounded-lg transition">Kontak</a>
-                <button class="w-full gradient-accent text-sm text-primary-dark font-bold py-2 rounded-lg mt-2">
-                    <i class="fas fa-ticket-alt mr-1.5"></i>
-                    Pesan Tiket
-                </button>
+<button class="pesan-tiket-btn gradient-accent text-primary-dark text-sm font-bold px-5 py-2 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+    <i class="fas fa-ticket-alt mr-1.5"></i>
+    Pesan Tiket
+</button>
+
             </div>
         </div>
     </nav>
@@ -250,40 +252,26 @@
         </div>
     </section>
 
-    <!-- Filter Section - Mobile Friendly -->
-    <section class="py-6 bg-white shadow-md -mt-8 relative z-10 mx-4 rounded-2xl">
-        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-3 xs:gap-4">
-                <div class="col-span-1 xs:col-span-2">
-                    <label class="block text-xs xs:text-sm font-semibold text-gray-700 mb-1">Lokasi Jemput</label>
-                    <div class="relative">
-                        <i class="fas fa-map-marker-alt absolute left-3 top-3.5 text-gray-400 text-sm"></i>
-                        <input type="text" placeholder="Alamat jemput" class="w-full pl-10 pr-3 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent">
-                    </div>
-                </div>
-                <div class="col-span-1 xs:col-span-2">
-                    <label class="block text-xs xs:text-sm font-semibold text-gray-700 mb-1">Lokasi Tujuan</label>
-                    <div class="relative">
-                        <i class="fas fa-flag absolute left-3 top-3.5 text-gray-400 text-sm"></i>
-                        <input type="text" placeholder="Alamat tujuan" class="w-full pl-10 pr-3 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent">
-                    </div>
-                </div>
-                <div class="col-span-1 xs:col-span-2">
-                    <label class="block text-xs xs:text-sm font-semibold text-gray-700 mb-1">Tanggal & Waktu</label>
-                    <div class="relative">
-                        <i class="fas fa-calendar-alt absolute left-3 top-3.5 text-gray-400 text-sm"></i>
-                        <input type="datetime-local" class="w-full pl-10 pr-3 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent">
-                    </div>
-                </div>
-                <div class="col-span-1 xs:col-span-2 flex items-end">
-                    <button class="w-full gradient-accent text-primary-dark font-bold py-2.5 text-sm xs:text-base rounded-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center">
-                        <i class="fas fa-search mr-2"></i>
-                        Cari Travel
-                    </button>
-                </div>
-            </div>
+
+
+<!-- Modal Booking -->
+<div id="booking-popup" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl w-full max-w-lg relative">
+        <button id="close-popup" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+        <div class="p-6">
+            <livewire:booking-travel />
         </div>
-    </section>
+    </div>
+</div>
+
+
+    <!-- Filter Section - Mobile Friendly -->
+<section class="py-12 xs:py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <livewire:booking-travel />
+    </div>
+</section>
+
 
    <!-- Tipe Travel Section -->
 <!-- Tipe Travel Section - Fixed Responsive -->
@@ -758,6 +746,25 @@
         e.preventDefault();
         deferredPrompt = e;
     });
+    // Tombol "Pesan Tiket" semua
+document.querySelectorAll('.pesan-tiket-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.getElementById('booking-popup').classList.remove('hidden');
+    });
+});
+
+// Tombol close
+document.getElementById('close-popup').addEventListener('click', () => {
+    document.getElementById('booking-popup').classList.add('hidden');
+});
+
+// Tutup modal saat klik di luar modal
+document.getElementById('booking-popup').addEventListener('click', (e) => {
+    if(e.target.id === 'booking-popup'){
+        e.target.classList.add('hidden');
+    }
+});
+
     </script>
 </body>
 </html>

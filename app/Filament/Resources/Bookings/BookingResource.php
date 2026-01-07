@@ -10,6 +10,7 @@ use App\Filament\Resources\Bookings\Schemas\BookingForm;
 use App\Filament\Resources\Bookings\Schemas\BookingInfolist;
 use App\Filament\Resources\Bookings\Tables\BookingsTable;
 use App\Models\Booking;
+use App\Models\User;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -17,6 +18,7 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Auth;
 
 class BookingResource extends Resource
 {
@@ -65,5 +67,17 @@ class BookingResource extends Resource
             ->withoutGlobalScopes([
                 SoftDeletingScope::class,
             ]);
+    }
+
+    /**
+     * Batasi akses resource: admin_travel tidak boleh mengakses
+     */
+    public static function canAccess(): bool
+    {
+        /** @var User|null $user */
+        $user = Auth::user();
+
+        // jika user admin_travel, return false, lainya boleh
+        return $user && !$user->isAdminTravel();
     }
 }
