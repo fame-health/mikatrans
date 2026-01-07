@@ -201,11 +201,18 @@
                         <i class="fas fa-ticket-alt mr-1.5"></i>
                         Pesan Tiket
                     </button>
+                       <button onclick="window.location.href='/admin/login'" class="login-admin-btn gradient-accent text-primary-dark text-sm font-bold px-5 py-2 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center">
+        <i class="fas fa-user-shield mr-1.5"></i>
+        Login
+    </button>
                 </div>
 
                 <button id="mobile-menu-btn" class="lg:hidden text-primary focus:outline-none">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
+
+
+
             </div>
 
             <div id="mobile-menu" class="hidden lg:hidden pb-4 space-y-1">
@@ -219,6 +226,10 @@
                     <i class="fas fa-ticket-alt mr-1.5"></i>
                     Pesan Tiket
                 </button>
+                   <button onclick="window.location.href='/admin/login'" class="login-admin-btn gradient-accent text-primary-dark text-sm font-bold px-5 py-2 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center">
+        <i class="fas fa-user-shield mr-1.5"></i>
+        Login
+    </button>
             </div>
         </div>
     </nav>
